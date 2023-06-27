@@ -14,40 +14,39 @@ function About() {
               ></a>
             </div>
             <div className="col-lg-6 content order-last  order-lg-first">
-              <h3>About Us</h3>
+              <h3>Welcome to EMMS - East Manchester Minibus Service</h3>
               <p>
-                Dolor iure expedita id fuga asperiores qui sunt consequatur minima. Quidem voluptas
-                deleniti. Sit quia molestiae quia quas qui magnam itaque veritatis dolores. Corrupti
-                totam ut eius incidunt reiciendis veritatis asperiores placeat.
+                EMMS is your premier choice for reliable and affordable transportation services in
+                East Manchester and surrounding areas. With over 20 years of experience in the
+                industry, we take pride in offering a first-class travel solution that caters to all
+                your needs. Whether you're heading to the airport, planning a day trip, attending a
+                sporting event, or simply enjoying a fun night out, EMMS has you covered.
               </p>
               <ul>
-                <li data-aos="fade-up">
+                <li>
                   <i className="bi bi-diagram-3"></i>
                   <div>
-                    <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                    <p>
-                      Magni facilis facilis repellendus cum excepturi quaerat praesentium libre
-                      trade
-                    </p>
+                    <h5>Eight-Seater Travel Solutions</h5>
+                    <p>Travel in comfort and style with our spacious eight-seater minibuses.</p>
                   </div>
                 </li>
-                <li data-aos="fade-up">
+                <li>
                   <i className="bi bi-fullscreen-exit"></i>
                   <div>
-                    <h5>Magnam soluta odio exercitationem reprehenderi</h5>
+                    <h5>Affordable Pricing</h5>
                     <p>
-                      Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna
-                      pasata redi
+                      We believe that quality transportation should be accessible to everyone.
+                      That's why we offer competitive rates that won't break the bank.
                     </p>
                   </div>
                 </li>
-                <li data-aos="fade-up">
+                <li>
                   <i className="bi bi-broadcast"></i>
                   <div>
-                    <h5>Voluptatem et qui exercitationem</h5>
+                    <h5>Outstanding Service</h5>
                     <p>
-                      Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt
-                      maxime veniam
+                      Customer satisfaction is our top priority. Our dedicated team goes above and
+                      beyond to ensure your journey is smooth, convenient, and enjoyable
                     </p>
                   </div>
                 </li>

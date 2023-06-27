@@ -2,7 +2,7 @@ import backgroundImage from "../assets/img/quote-bg.jpg";
 function Reserve() {
   return (
     <>
-      <section id="get-a-quote" className="get-a-quote">
+      <section id="reserve" className="get-a-quote">
         <div className="container">
           <div className="row g-0">
             <div

@@ -1,3 +1,7 @@
 body {
   display: initial !important;
 }
+
+#about {
+  margin-top: 20px;
+}

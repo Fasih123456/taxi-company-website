@@ -1,7 +1,7 @@
 function Rates() {
   return (
     <>
-      <section id="pricing" className="pricing pt-0">
+      <section id="rates" className="pricing pt-0">
         <div className="container">
           <div className="section-header">
             <span>Pricing</span>

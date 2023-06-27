@@ -8,6 +8,7 @@ import Hero from "./components/hero";
 import Rates from "./components/rates";
 import Reserve from "./components/reserve";
 import Contact from "./components/contact";
+import Services from "./components/services";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Hero />
 
         <About />
+
         <Rates />
         <Reserve />
         <Contact />

@@ -3,7 +3,7 @@ import backgroundImage from "../assets/img/quote-bg.jpg";
 function Contact() {
   return (
     <>
-      <section id="get-a-quote" className="get-a-quote">
+      <section id="contact" className="get-a-quote">
         <div className="container">
           <div className="row g-0">
             <div
