@@ -12,10 +12,9 @@ function Reserve() {
 
             <div className="col-lg-7">
               <form action="forms/quote.php" method="post" className="php-email-form">
-                <h3>Get a quote</h3>
+                <h3>Reserve Trip</h3>
                 <p>
-                  Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum
-                  repellendus enim linead sero park flows.
+                  After you have filled out this form a taxi will be dispatched to your location.
                 </p>
                 <div className="row gy-4">
                   <div className="col-md-6">
@@ -23,7 +22,7 @@ function Reserve() {
                       type="text"
                       name="departure"
                       className="form-control"
-                      placeholder="City of Departure"
+                      placeholder="Address of Departure"
                       required
                     />
                   </div>
@@ -33,7 +32,7 @@ function Reserve() {
                       type="text"
                       name="delivery"
                       className="form-control"
-                      placeholder="Delivery City"
+                      placeholder="Address of Arrival"
                       required
                     />
                   </div>
@@ -41,9 +40,9 @@ function Reserve() {
                   <div className="col-md-6">
                     <input
                       type="text"
-                      name="weight"
+                      name="Postal Code of Departure"
                       className="form-control"
-                      placeholder="Total Weight (kg)"
+                      placeholder="B3H 1X9"
                       required
                     />
                   </div>
@@ -51,9 +50,9 @@ function Reserve() {
                   <div className="col-md-6">
                     <input
                       type="text"
-                      name="dimensions"
+                      name="1"
                       className="form-control"
-                      placeholder="Dimensions (cm)"
+                      placeholder="Number Of Passengers"
                       required
                     />
                   </div>
@@ -109,7 +108,7 @@ function Reserve() {
                       Your quote request has been sent successfully. Thank you!
                     </div>
 
-                    <button type="submit">Get a quote</button>
+                    <button type="submit">Reserve Trip</button>
                   </div>
                 </div>
               </form>

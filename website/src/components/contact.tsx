@@ -13,52 +13,9 @@ function Contact() {
 
             <div className="col-lg-7">
               <form action="forms/quote.php" method="post" className="php-email-form">
-                <h3>Get a quote</h3>
-                <p>
-                  Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum
-                  repellendus enim linead sero park flows.
-                </p>
+                <h3>Contact Us</h3>
+                <p>Thank you for your inquiry. We will get back to you as soon as possible.</p>
                 <div className="row gy-4">
-                  <div className="col-md-6">
-                    <input
-                      type="text"
-                      name="departure"
-                      className="form-control"
-                      placeholder="City of Departure"
-                      required
-                    />
-                  </div>
-
-                  <div className="col-md-6">
-                    <input
-                      type="text"
-                      name="delivery"
-                      className="form-control"
-                      placeholder="Delivery City"
-                      required
-                    />
-                  </div>
-
-                  <div className="col-md-6">
-                    <input
-                      type="text"
-                      name="weight"
-                      className="form-control"
-                      placeholder="Total Weight (kg)"
-                      required
-                    />
-                  </div>
-
-                  <div className="col-md-6">
-                    <input
-                      type="text"
-                      name="dimensions"
-                      className="form-control"
-                      placeholder="Dimensions (cm)"
-                      required
-                    />
-                  </div>
-
                   <div className="col-lg-12">
                     <h4>Your Personal Details</h4>
                   </div>
@@ -94,6 +51,15 @@ function Contact() {
                   </div>
 
                   <div className="col-md-12">
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="trip-number"
+                      placeholder="Your Trip Number"
+                    />
+                  </div>
+
+                  <div className="col-md-12">
                     <textarea
                       className="form-control"
                       name="message"
@@ -110,7 +76,7 @@ function Contact() {
                       Your quote request has been sent successfully. Thank you!
                     </div>
 
-                    <button type="submit">Get a quote</button>
+                    <button type="submit">Send Inquiry</button>
                   </div>
                 </div>
               </form>
