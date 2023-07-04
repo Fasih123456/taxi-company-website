@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://eastmanchesterapi.azurewebsites.net//Customer",
+  baseURL: "/api/Customer",
 });
 
 export default api;
