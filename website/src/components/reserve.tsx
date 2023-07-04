@@ -58,7 +58,7 @@ function Reserve() {
     try {
       //Large number to ensure that the id is unique
       const randomNumber = Math.floor(Math.random() * 1000000) + 1000000;
-      const response = await api.post("", {
+      const response = await api.post("/submit", {
         id: randomNumber,
         created: new Date().toISOString(),
         passengerName: formValues.name,

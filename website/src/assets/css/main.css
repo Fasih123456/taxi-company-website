@@ -1706,7 +1706,7 @@ section {
   width: 100%;
   min-height: 50vh;
   background-color: var(--color-secondary);
-  background-image: url("../img/hero-bg.png");
+  background-image: url("../img/newhero.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
