@@ -7,6 +7,7 @@ import About from "./components/about";
 import Hero from "./components/hero";
 import Reserve from "./components/reserve";
 import Booking from "./components/booking";
+import FloatingButton from "./components/FloatingButton";
 
 //React Import
 import React, { useState, useRef } from "react";
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <body>
+      <FloatingButton />
       <main id="main">
         <Header />
         <Hero setCurrentAddress={setCurrentAddress} handleFormSubmit={handleFormSubmit} />

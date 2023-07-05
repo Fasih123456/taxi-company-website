@@ -15,3 +15,11 @@ body {
     max-width: 100%;
   }
 }
+
+.fab-container {
+  right: 2vw !important;
+}
+
+.bg-body-tertiary {
+  --bs-bg-opacity: 0 !important;
+}
