@@ -3,7 +3,7 @@ import aboutImage from "../assets/img/about.jpg";
 function About() {
   return (
     <>
-      <section id="about" className="about pt-0">
+      <section id="about" className="about " style={{ paddingTop: "20px" }}>
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-6 position-relative align-self-start order-lg-last order-first">

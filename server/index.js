@@ -16,18 +16,25 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/submit", (req, res) => {
   console.log(req.body);
-  axios.post("https://eastmanchesterapi.azurewebsites.net//Customer", {
-    id: req.body.id,
-    created: req.body.created,
-    passengerName: req.body.passengerName,
-    pickUpLocation: req.body.pickUpLocation,
-    dropOffAddress: req.body.dropOffAddress,
-    pickUpTime: req.body.pickUpTime,
-    contactPhoneNumber: req.body.contactPhoneNumber,
-    numberOfPassengers: req.body.numberOfPassengers,
-    email: req.body.email,
-    bookingStatus: "",
-  });
+  axios
+    .post("https://eastmanchesterapi.azurewebsites.net//Customer", {
+      id: req.body.id,
+      created: req.body.created,
+      passengerName: req.body.passengerName,
+      pickUpLocation: req.body.pickUpLocation,
+      dropOffAddress: req.body.dropOffAddress,
+      pickUpTime: req.body.pickUpTime,
+      contactPhoneNumber: req.body.contactPhoneNumber,
+      numberOfPassengers: req.body.numberOfPassengers,
+      email: req.body.email,
+      bookingStatus: "",
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
   res.send("success");
 });

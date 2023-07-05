@@ -6,11 +6,14 @@ function Footer() {
           <div className="row gy-4">
             <div className="col-lg-5 col-md-12 footer-info">
               <a href="index.html" className="logo d-flex align-items-center">
-                <span>Logis</span>
+                <span>EMMS</span>
               </a>
               <p>
-                Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa
-                magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.
+                Experience seamless taxi service in Manchester with our reliable transportation
+                company. We are committed to providing prompt and comfortable rides to your desired
+                destinations. Our skilled drivers and modern fleet ensure a safe and enjoyable
+                journey. Book your ride now and enjoy the convenience of our exceptional taxi
+                services in Manchester.
               </p>
               <div className="social-links d-flex mt-4">
                 <a href="#" className="twitter">
@@ -27,7 +30,6 @@ function Footer() {
                 </a>
               </div>
             </div>
-
             <div className="col-lg-2 col-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
@@ -45,27 +47,6 @@ function Footer() {
                 </li>
                 <li>
                   <a href="#">Privacy policy</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-lg-2 col-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li>
-                  <a href="#">Web Design</a>
-                </li>
-                <li>
-                  <a href="#">Web Development</a>
-                </li>
-                <li>
-                  <a href="#">Product Management</a>
-                </li>
-                <li>
-                  <a href="#">Marketing</a>
-                </li>
-                <li>
-                  <a href="#">Graphic Design</a>
                 </li>
               </ul>
             </div>
@@ -91,7 +72,7 @@ function Footer() {
           <div className="copyright">
             &copy; Copyright{" "}
             <strong>
-              <span>Logis</span>
+              <span>Sysmlogic</span>
             </strong>
             . All Rights Reserved
           </div>

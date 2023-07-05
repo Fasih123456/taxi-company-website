@@ -7,17 +7,32 @@ import { useState } from "react";
 
 //TODO: pickup time is missing
 
-function Reserve() {
+type ReserveProps = {
+  currentAddress: string;
+  setCurrentAddress: (address: string) => void;
+};
+
+type FormValues = {
+  departure: string;
+  delivery: string;
+  passengers: number;
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
+const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
   const [pickupTime, setPickupTime] = useState("");
   const [formpickuptime, setFormPickUptime] = useState("");
-  const [formValues, setFormValues] = useState({
-    departure: "",
+  const [formValues, setFormValues] = useState<FormValues>({
+    departure: currentAddress ? currentAddress : "", //this is being handled by the parent component
     delivery: "",
     passengers: 0,
     name: "",
     email: "",
-    phone: "",
+    phone: "123",
     message: "",
   });
 
@@ -62,7 +77,7 @@ function Reserve() {
         id: randomNumber,
         created: new Date().toISOString(),
         passengerName: formValues.name,
-        pickUpLocation: formValues.departure,
+        pickUpLocation: currentAddress,
         dropOffAddress: formValues.delivery,
         pickupTime: pickupTime,
         contactPhoneNumber: formValues.phone,
@@ -81,7 +96,7 @@ function Reserve() {
         passengers: 0,
         name: "",
         email: "",
-        phone: "",
+        phone: "123456",
         message: "",
       });
     } catch (error) {
@@ -115,8 +130,8 @@ function Reserve() {
                       name="departure"
                       className="form-control"
                       placeholder="Address of Departure"
-                      value={formValues.departure}
-                      onChange={handleInputChange}
+                      value={currentAddress}
+                      onChange={(e) => setCurrentAddress(e.target.value)}
                       required
                     />
                   </div>
@@ -228,6 +243,6 @@ function Reserve() {
       </section>
     </>
   );
-}
+};
 
 export default Reserve;

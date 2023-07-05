@@ -1,5 +1,8 @@
 import logo from "../assets/img/logo.png";
 
+//TODO: Add mobile phone header
+//TODO: Seperate Navigation component
+
 function Header() {
   return (
     <>
@@ -9,8 +12,6 @@ function Header() {
             <img src={logo} alt=""></img>
           </a>
 
-          <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-          <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
           <nav id="navbar" className="navbar">
             <ul>
               <li>
