@@ -297,7 +297,7 @@ section {
 }
 
 .header .logo img {
-  max-height: 66px;
+  max-height: 27px;
   margin-right: 6px;
 }
 
@@ -354,7 +354,8 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover > a {
-    color: #fff;
+    color: blue;
+    font-weight: 600;
   }
 
   .navbar .get-a-quote,
@@ -521,18 +522,13 @@ section {
   color: #001f8d;
 }
 
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
+.about .content li {
   display: flex;
   align-items: flex-start;
   margin-top: 40px;
 }
 
-.about .content ul i {
+.about .content i {
   flex-shrink: 0;
   font-size: 48px;
   color: var(--color-primary);
@@ -540,13 +536,13 @@ section {
   line-height: 0;
 }
 
-.about .content ul h5 {
+.about .content h5 {
   font-size: 18px;
   font-weight: 700;
   color: #19335c;
 }
 
-.about .content ul p {
+.about .content p {
   font-size: 15px;
 }
 
@@ -1547,7 +1543,6 @@ section {
 }
 
 .service-details h3 {
-  font-size: 28px;
   font-weight: 700;
   color: var(--color-secondary);
 }
@@ -1556,10 +1551,6 @@ section {
   font-size: 20px;
   font-weight: 700;
   color: var(--color-secondary);
-}
-
-.service-details p {
-  font-size: 15px;
 }
 
 .service-details ul {
@@ -1610,9 +1601,10 @@ section {
 }
 
 .hero p {
-  font-size: 16 px;
+  font-size: 18 px;
   font-weight: 600;
   margin-bottom: 40px;
+  color: white;
 }
 
 .hero form {

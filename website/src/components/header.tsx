@@ -12,7 +12,7 @@ function Header() {
     <header id="header" className="header d-flex align-items-center fixed-top">
       <Container fluid className="container-xl d-flex align-items-center justify-content-between">
         <a href="/" className="logo d-flex align-items-center">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="fixed-logo" />
         </a>
 
         <Navigation />

@@ -10,7 +10,7 @@ const Navigation = () => {
             <Nav.Link href="#header">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#service-details">Bookings</Nav.Link>
-            <Nav.Link href="#reserve">Reserve Now</Nav.Link>
+            <Nav.Link href="#pricing">Reserve Now</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

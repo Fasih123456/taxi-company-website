@@ -1,11 +1,16 @@
 //Component imports
-import backgroundImage from "../assets/img/quote-bg.jpg";
+import backgroundImage from "../assets/img/reserve-img.jpg";
 import api from "./../API/api";
 
 //Package imports
 import { useState } from "react";
 
 //TODO: pickup time is missing
+//TODO: maximum 8 passengers only
+//TODO: no negative passengers
+//TODO: Pick up time placeholder
+//TODO: //Should show placeholder
+//TODO : pickup date missing
 
 type ReserveProps = {
   currentAddress: string;
@@ -135,7 +140,6 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
                   <div className="col-md-6">
                     <input
                       type="text"
@@ -147,7 +151,7 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
+                  //Pick up time placeholder
                   <div className="col-md-6">
                     <input
                       type="time"
@@ -159,7 +163,7 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
+                  //Should show placeholder
                   <div className="col-md-6">
                     <input
                       type="number"
@@ -171,11 +175,9 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
                   <div className="col-lg-12">
                     <h4>Your Personal Details</h4>
                   </div>
-
                   <div className="col-md-12">
                     <input
                       type="text"
@@ -187,7 +189,6 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
                   <div className="col-md-12 ">
                     <input
                       type="email"
@@ -199,7 +200,6 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
                   <div className="col-md-12">
                     <input
                       type="text"
@@ -211,7 +211,6 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-
                   <div className="col-md-12">
                     <textarea
                       className="form-control"
@@ -223,7 +222,6 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     ></textarea>
                   </div>
-
                   <div className="col-md-12 text-center">
                     {loading ? (
                       <div className="loading">Loading</div>
