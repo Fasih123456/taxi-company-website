@@ -1,10 +1,8 @@
-import aboutImage from "../assets/img/about.jpg";
-
 import { Container, Row, Col } from "react-bootstrap";
 import TailWindCard from "./SubComponents/TailWindCard";
 
 //Components
-import BookingCard from "./SubComponents/BookingCard";
+
 import AirportPickUp from "../assets/img/booking-img/1.jpeg";
 import DayTrips from "../assets/img/booking-img/2.jpg";
 import Resorts from "../assets/img/booking-img/3.jpeg";

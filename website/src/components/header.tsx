@@ -4,8 +4,7 @@ import logo from "../assets/img/logo.png";
 //TODO: Seperate Navigation component
 
 import Navigation from "./Navigation";
-import MobileNavigation from "./MobileNavigation";
-import { Navbar, Nav, NavDropdown, Container, Form, FormControl, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function Header() {
   return (

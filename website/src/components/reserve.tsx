@@ -3,7 +3,13 @@ import backgroundImage from "../assets/img/reserve-img.jpg";
 import api from "./../API/api";
 
 //Package imports
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { subDays, addDays } from "date-fns";
 
 //TODO: pickup time is missing
 //TODO: maximum 8 passengers only
@@ -34,13 +40,13 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
   const [formValues, setFormValues] = useState<FormValues>({
     departure: currentAddress ? currentAddress : "", //this is being handled by the parent component
     delivery: "",
-    passengers: 0,
+    passengers: 1,
     name: "",
     email: "",
     phone: "123",
     message: "",
   });
-
+  const [startDate, setStartDate] = useState(new Date());
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -52,22 +58,7 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
     });
   };
 
-  const handleTimeChange = (e: any) => {
-    const selectedTime = e.target.value;
-    setFormPickUptime(selectedTime);
-    // Extract the hours from the selected time in the format HH:MM
-    const hours = selectedTime.split(":")[0];
-    // Create a new date object with the current date
-    const currentDate = new Date();
-    // Set the hours from the selected time to the new date object
-    currentDate.setHours(hours);
-    // Convert the date object to the required format "2023-07-01T21:01:28.615Z"
-    const formattedTime = currentDate.toISOString();
-    console.log(formattedTime);
-
-    // Update the state with the formatted time
-    setPickupTime(formattedTime);
-  };
+  const renderTooltip = (text: string) => <Tooltip id="button-tooltip">{text}</Tooltip>;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -98,7 +89,7 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
       setFormValues({
         departure: "",
         delivery: "",
-        passengers: 0,
+        passengers: 1,
         name: "",
         email: "",
         phone: "123456",
@@ -151,29 +142,44 @@ const Reserve: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) 
                       required
                     />
                   </div>
-                  //Pick up time placeholder
+
                   <div className="col-md-6">
-                    <input
-                      type="time"
-                      name="pickupTime"
-                      id="pickupTime"
-                      className="form-control"
-                      value={formpickuptime}
-                      onChange={handleTimeChange}
-                      required
-                    />
+                    <OverlayTrigger
+                      placement="bottom"
+                      delay={{ show: 250, hide: 400 }}
+                      overlay={renderTooltip("Number Of Passengers(1-8)")}
+                    >
+                      <input
+                        type="number"
+                        name="passengers"
+                        id="passengers"
+                        className="form-control"
+                        placeholder="Number Of Passengers"
+                        min={1}
+                        max={8}
+                        value={formValues.passengers}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </OverlayTrigger>
                   </div>
-                  //Should show placeholder
                   <div className="col-md-6">
-                    <input
-                      type="number"
-                      name="passengers"
-                      className="form-control"
-                      placeholder="Number Of Passengers"
-                      value={formValues.passengers}
-                      onChange={handleInputChange}
-                      required
-                    />
+                    <OverlayTrigger
+                      placement="bottom"
+                      delay={{ show: 250, hide: 400 }}
+                      overlay={renderTooltip("Pick Up Date")}
+                    >
+                      <DatePicker
+                        selected={startDate}
+                        onChange={(date: SetStateAction<Date>) => setStartDate(date)}
+                        timeInputLabel="Time:"
+                        excludeDateIntervals={[
+                          { start: subDays(new Date(), 99999999), end: addDays(new Date(), -1) },
+                        ]}
+                        dateFormat="MM/dd/yyyy h:mm aa"
+                        showTimeInput
+                      />
+                    </OverlayTrigger>
                   </div>
                   <div className="col-lg-12">
                     <h4>Your Personal Details</h4>
