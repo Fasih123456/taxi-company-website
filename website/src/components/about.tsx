@@ -1,5 +1,4 @@
-import aboutImage from "../assets/img/about.jpg";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
 function About() {

@@ -13,8 +13,6 @@ import ReserveForm from "./components/SubComponents/ReserveForm";
 //React Import
 import React, { useState, useRef, useContext, createContext, useEffect } from "react";
 
-//TODO: Add floating component
-
 function App() {
   const [currentAddress, setCurrentAddress] = useState("");
 

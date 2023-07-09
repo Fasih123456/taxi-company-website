@@ -1,7 +1,6 @@
 import logo from "../assets/img/logo.png";
 
-//TODO: Add mobile phone header
-//TODO: Seperate Navigation component
+//TODO: Fix the mobile phone header
 
 import Navigation from "./Navigation";
 import { Container } from "react-bootstrap";

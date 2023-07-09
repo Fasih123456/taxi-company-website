@@ -1,21 +1,30 @@
 import "./css/form.css";
-import formImage from "../../assets/img/reserve-img.jpg";
 
+//React
 import { SetStateAction, useState } from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
+//Date Handling
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { subDays, addDays } from "date-fns";
 
+//Toastify
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+//API
 import api from "../../API/api";
 
+//Handles the type for the props
 type ReserveProps = {
   currentAddress: string;
   setCurrentAddress: (address: string) => void;
 };
 
+//Handles the type for the forms
 type FormValues = {
   departure: string;
   delivery: string;
@@ -29,7 +38,17 @@ type FormValues = {
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
   const [pickupTime, setPickupTime] = useState("");
-  const [formpickuptime, setFormPickUptime] = useState("");
+  const server400 = () =>
+    toast.success("Your Booking Request Has Been Sent Successfully To your Email!");
+  const server500 = () =>
+    toast.error(
+      "An Error Occured While Sending Your Booking Request. Please Try Again Later. Contact Us If The Problem Persists."
+    );
+  const PassengerNumValidationFailed = () =>
+    toast.warning("Please Enter A Valid Number Of Passengers between 1 and 8");
+  const dateValidationFailed = () =>
+    toast.warning("Please Enter A Date after the current date and time");
+
   const [formValues, setFormValues] = useState<FormValues>({
     departure: currentAddress ? currentAddress : "", //this is being handled by the parent component
     delivery: "",
@@ -44,6 +63,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  //Handles all input changes
   const handleInputChange = (e: any) => {
     setFormValues({
       ...formValues,
@@ -53,11 +73,31 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
 
   const renderTooltip = (text: string) => <Tooltip id="button-tooltip">{text}</Tooltip>;
 
+  //Will be used for form validation
   const handleSubmit = async (e: any) => {
+    let validation = true;
     e.preventDefault();
     setLoading(true);
     setErrorMessage("");
     setSuccessMessage("");
+
+    //Validates the number of passengers
+    if (formValues.passengers < 1 || formValues.passengers > 8) {
+      PassengerNumValidationFailed();
+      validation = false;
+    }
+
+    //Validates the date
+    if (startDate < new Date()) {
+      dateValidationFailed();
+      validation = false;
+    }
+
+    //If the validation fails, the form will not be submitted
+    if (!validation) {
+      setLoading(false);
+      return;
+    }
 
     try {
       //Large number to ensure that the id is unique
@@ -75,10 +115,12 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
         bookingStatus: "",
       });
 
-      // Handle the response data here if needed
-      console.log(response.data);
+      if (response.status === 400) {
+        server400();
+      } else if (response.status === 500) {
+        server500();
+      }
 
-      setSuccessMessage("Your quote request has been sent successfully. Thank you!");
       setFormValues({
         departure: "",
         delivery: "",
@@ -89,7 +131,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
         message: "",
       });
     } catch (error) {
-      setErrorMessage("An error occurred while submitting the form. Please try again later.");
+      server500();
       console.error(error);
     }
 
@@ -97,13 +139,13 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
   };
 
   return (
-    <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+    <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" id="reserve-form">
       <div className="wrapper wrapper--w780">
         <div className="card card-3">
           <div className="card-heading"></div>
           <div className="card-body">
             <h2 className="title">Registration Info</h2>
-            <form method="POST">
+            <form onSubmit={handleSubmit}>
               <div className="input-group">
                 <input
                   type="text"
@@ -203,6 +245,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                 <button className="btn btn--pill btn--green" type="submit">
                   Submit
                 </button>
+                <ToastContainer />
               </div>
             </form>
           </div>

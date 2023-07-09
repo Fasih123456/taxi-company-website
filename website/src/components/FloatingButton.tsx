@@ -1,6 +1,4 @@
 import { Container, Link, Button, lightColors, darkColors } from "react-floating-action-button";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { MdPhone, MdAdd } from "react-icons/md";
 
 const FloatingButton = () => {
   return (

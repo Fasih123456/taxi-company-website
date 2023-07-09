@@ -31,12 +31,12 @@ app.post("/submit", (req, res) => {
     })
     .then((response) => {
       console.log(response);
+      res.status(202).send("success");
     })
     .catch((error) => {
       console.log(error);
+      res.status(500).send("error");
     });
-
-  res.send("success");
 });
 
 app.listen(PORT, () => {
