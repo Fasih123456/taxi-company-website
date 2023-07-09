@@ -37,7 +37,7 @@ type FormValues = {
 
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
-  const [pickupTime, setPickupTime] = useState("");
+  const [pickupTime] = useState("");
   const server400 = () =>
     toast.success("Your Booking Request Has Been Sent Successfully To your Email!");
   const server500 = () =>
