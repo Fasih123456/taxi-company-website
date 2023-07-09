@@ -1,7 +1,24 @@
 import aboutImage from "../assets/img/about.jpg";
 import { Container, Row, Col } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 function About() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  console.log(windowWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    //console.log(windowWidth, location);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, [windowWidth, location]);
+
   return (
     <>
       <section id="about" className="about " style={{ paddingTop: "20px" }}>
@@ -21,27 +38,34 @@ function About() {
                   <i className="bi bi-diagram-3"></i>
                   <div className="each-service-div">
                     <h5>Eight-Seater Travel Solutions</h5>
-                    <p>Travel in comfort and style with our spacious eight-seater minibuses.</p>
+                    {windowWidth > 768 ? (
+                      <p>Travel in comfort and style with our spacious eight-seater minibuses.</p>
+                    ) : null}
                   </div>
                 </Col>
                 <Col className="text-center">
                   <i className="bi bi-fullscreen-exit"></i>
                   <div className="each-service-div">
                     <h5>Affordable Pricing</h5>
-                    <p>
-                      We believe that quality transportation should be accessible to everyone.
-                      That's why we offer competitive rates that won't break the bank.
-                    </p>
+
+                    {windowWidth > 768 ? (
+                      <p>
+                        We believe that quality transportation should be accessible to everyone.
+                        That's why we offer competitive rates that won't break the bank.
+                      </p>
+                    ) : null}
                   </div>
                 </Col>
                 <Col className="text-center">
                   <i className="bi bi-broadcast"></i>
                   <div className="each-service-div">
                     <h5>Outstanding Service</h5>
-                    <p>
-                      Customer satisfaction is our top priority. Our dedicated team goes above and
-                      beyond to ensure your journey is smooth, convenient, and enjoyable
-                    </p>
+                    {windowWidth > 768 ? (
+                      <p>
+                        Customer satisfaction is our top priority. Our dedicated team goes above and
+                        beyond to ensure your journey is smooth, convenient, and enjoyable
+                      </p>
+                    ) : null}
                   </div>
                 </Col>
               </Row>

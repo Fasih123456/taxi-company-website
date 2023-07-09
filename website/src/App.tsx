@@ -8,9 +8,10 @@ import Hero from "./components/hero";
 import Reserve from "./components/reserve";
 import Booking from "./components/booking";
 import FloatingButton from "./components/FloatingButton";
+import ReserveForm from "./components/SubComponents/ReserveForm";
 
 //React Import
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext, createContext, useEffect } from "react";
 
 //TODO: Add floating component
 
@@ -40,12 +41,20 @@ function App() {
         <Booking />
 
         <div ref={reserveRef}>
-          <Reserve currentAddress={currentAddress} setCurrentAddress={setCurrentAddress} />
+          <ReserveForm currentAddress={currentAddress} setCurrentAddress={setCurrentAddress} />
         </div>
+
         <Footer />
       </main>
     </body>
   );
 }
+
+/*
+
+        <div ref={reserveRef}>
+          <Reserve currentAddress={currentAddress} setCurrentAddress={setCurrentAddress} />
+        </div>
+*/
 
 export default App;

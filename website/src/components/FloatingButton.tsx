@@ -4,49 +4,46 @@ import { MdPhone, MdAdd } from "react-icons/md";
 
 const FloatingButton = () => {
   return (
-    <Container id="floatingButton">
-      <Link
-        href="https://www.facebook.com/people/East-Manchester-Minibus-Service/100094447771778/?mibextid=ZbWKwL"
-        tooltip="Facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fab-item btn btn-link btn-lg text-white"
-      >
-        <FaFacebook />
-      </Link>
-      <Link
-        href="https://www.instagram.com/example"
-        tooltip="Instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fab-item btn btn-link btn-lg text-white"
-      >
-        <FaInstagram />
-      </Link>
-      <Link
-        href="https://api.whatsapp.com/send?phone=+447894532415"
-        tooltip="WhatsApp"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fab-item btn btn-link btn-lg text-white"
-      >
-        <FaWhatsapp />
-      </Link>
+    <Container>
       <Link
         href="tel:+447894532415"
-        tooltip="Phone"
-        target="_blank"
-        rel="noopener noreferrer"
+        tooltip="Contact By phone"
+        icon="fa-solid fa-phone"
         className="fab-item btn btn-link btn-lg text-white"
-      >
-        <MdPhone />
-      </Link>
+        styles={{ backgroundColor: lightColors.black }}
+      />
+
+      <Link
+        href="https://www.facebook.com/people/East-Manchester-Minibus-Service/100094447771778/?mibextid=ZbWKwL"
+        target="_blank"
+        tooltip="Contact By Facebook"
+        icon="fa-brands fa-facebook"
+        className="fab-item btn btn-link btn-lg text-white"
+        styles={{ backgroundColor: lightColors.black }}
+      />
+
+      <Link
+        href="https://www.instagram.com/example"
+        tooltip="Contact By Instagram"
+        icon="fa-brands fa-instagram"
+        className="fab-item btn btn-link btn-lg text-white"
+        styles={{ backgroundColor: lightColors.black }}
+      />
+
+      <Link
+        href="https://wa.me/+447894532415"
+        tooltip="Contact By Whatsapp"
+        icon="fa-brands fa-whatsapp"
+        className="fab-item btn btn-link btn-lg text-white"
+        styles={{ backgroundColor: lightColors.black }}
+      />
+
       <Button
-        tooltip="BiG bUtToN"
-        styles={{ backgroundColor: darkColors.lighterRed, color: lightColors.white }}
-      >
-        <MdAdd />
-      </Button>
+        tooltip="Contact Us!"
+        icon="fas fa-plus"
+        rotate={true}
+        styles={{ backgroundColor: darkColors.blue }}
+      />
     </Container>
   );
 };
