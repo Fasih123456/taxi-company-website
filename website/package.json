@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --mode production --force",
+    "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -28,7 +28,7 @@
     "react-toastify": "^9.1.3",
     "rollup-plugin-postcss": "^4.0.2"
   },
-  "proxy": "http://localhost:4000",
+  "proxy": "https://emms-client-backend.azurewebsites.net",
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-datepicker": "^4.11.2",

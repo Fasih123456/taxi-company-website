@@ -15,38 +15,21 @@ function Footer() {
                 journey. Book your ride now and enjoy the convenience of our exceptional taxi
                 services in Manchester.
               </p>
-              <div className="social-links d-flex mt-4">
-                <a href="#" className="twitter">
-                  <i className="bi bi-twitter"></i>
-                </a>
-                <a href="#" className="facebook">
-                  <i className="bi bi-facebook"></i>
-                </a>
-                <a href="#" className="instagram">
-                  <i className="bi bi-instagram"></i>
-                </a>
-                <a href="#" className="linkedin">
-                  <i className="bi bi-linkedin"></i>
-                </a>
-              </div>
             </div>
             <div className="col-lg-2 col-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#hero">Home</a>
                 </li>
                 <li>
-                  <a href="#">About us</a>
+                  <a href="#about">About us</a>
                 </li>
                 <li>
-                  <a href="#">Services</a>
+                  <a href="#service-details">Services</a>
                 </li>
                 <li>
-                  <a href="#">Terms of service</a>
-                </li>
-                <li>
-                  <a href="#">Privacy policy</a>
+                  <a href="#reserve-form">Book Now</a>
                 </li>
               </ul>
             </div>
@@ -54,14 +37,13 @@ function Footer() {
             <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
               <h4>Contact Us</h4>
               <p>
-                A108 Adam Street <br />
-                New York, NY 535022
+                Manchester, Rochdale,
                 <br />
-                United States <br />
+                Oldham,Ashton-under-Lyne
                 <br />
-                <strong>Phone:</strong> +1 5589 55488 55
+                <strong>Phone:</strong> +44 07894 532415
                 <br />
-                <strong>Email:</strong> info@example.com
+                <strong>Email:</strong> emmsminibus@outlook.com
                 <br />
               </p>
             </div>
@@ -70,14 +52,11 @@ function Footer() {
 
         <div className="container mt-4">
           <div className="copyright">
-            &copy; Copyright{" "}
+            &copy; Copyright 2023
             <strong>
-              <span>Sysmlogic</span>
+              <span> Sysmlogic</span>
             </strong>
             . All Rights Reserved
-          </div>
-          <div className="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
           </div>
         </div>
       </footer>

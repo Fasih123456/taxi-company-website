@@ -126,3 +126,28 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
+
+.fab-container:hover .fab-item:not(:last-child) {
+  height: 50px !important;
+}
+
+.fab-item {
+  border-radius: 50% !important;
+}
+
+.margin-top-200 {
+  margin-top: 225px;
+}
+
+.margin-top-100 {
+  margin-top: 100px;
+}
+
+.input-text {
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  background-color: black;
+  color: white;
+  border-radius: 0px;
+}

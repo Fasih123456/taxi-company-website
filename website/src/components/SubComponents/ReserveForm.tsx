@@ -4,6 +4,7 @@ import "./css/form.css";
 import { SetStateAction, useState } from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import InputGroup from "react-bootstrap/InputGroup";
 
 //Date Handling
 import DatePicker from "react-datepicker";
@@ -35,6 +36,8 @@ type FormValues = {
   message: string;
 };
 
+//TODO:also make number field +44 default in the booking box
+
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
   const [pickupTime] = useState("");
@@ -59,9 +62,6 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
     message: "",
   });
   const [startDate, setStartDate] = useState(new Date());
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
 
   //Handles all input changes
   const handleInputChange = (e: any) => {
@@ -77,9 +77,6 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
   const handleSubmit = async (e: any) => {
     let validation = true;
     e.preventDefault();
-    setLoading(true);
-    setErrorMessage("");
-    setSuccessMessage("");
 
     //Validates the number of passengers
     if (formValues.passengers < 1 || formValues.passengers > 8) {
@@ -95,7 +92,6 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
 
     //If the validation fails, the form will not be submitted
     if (!validation) {
-      setLoading(false);
       return;
     }
 
@@ -109,7 +105,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
         pickUpLocation: currentAddress,
         dropOffAddress: formValues.delivery,
         pickupTime: pickupTime,
-        contactPhoneNumber: formValues.phone,
+        contactPhoneNumber: "+44" + formValues.phone,
         numberOfPassengers: formValues.passengers,
         email: formValues.email,
         bookingStatus: "",
@@ -134,8 +130,6 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
       server500();
       console.error(error);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -158,7 +152,6 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                 />
               </div>
               <div className="input-group">
-                {" "}
                 <input
                   type="text"
                   name="delivery"
@@ -230,7 +223,11 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                   required
                 />
               </div>
+
               <div className="input-group">
+                <InputGroup.Text id="basic-addon1" className="input-text">
+                  +44
+                </InputGroup.Text>
                 <input
                   type="text"
                   className="form-control input--style-3"

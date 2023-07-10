@@ -1,11 +1,14 @@
 import logo from "../assets/img/logo.png";
 
-//TODO: Fix the mobile phone header
-
 import Navigation from "./Navigation";
 import { Container } from "react-bootstrap";
 
-function Header() {
+type HeaderProps = {
+  setExpandedHeader: (expandedHeader: boolean) => void;
+  expandedHeader: boolean;
+};
+
+const Header: React.FC<HeaderProps> = ({ setExpandedHeader, expandedHeader }) => {
   return (
     <header id="header" className="header d-flex align-items-center fixed-top">
       <Container fluid className="container-xl d-flex align-items-center justify-content-between">
@@ -13,10 +16,10 @@ function Header() {
           <img src={logo} alt="" className="fixed-logo" />
         </a>
 
-        <Navigation />
+        <Navigation setExpandedHeader={setExpandedHeader} expandedHeader={expandedHeader} />
       </Container>
     </header>
   );
-}
+};
 
 export default Header;

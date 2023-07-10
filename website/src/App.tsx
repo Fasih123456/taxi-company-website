@@ -5,16 +5,17 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import About from "./components/about";
 import Hero from "./components/hero";
-import Reserve from "./components/reserve";
+
 import Booking from "./components/booking";
 import FloatingButton from "./components/FloatingButton";
 import ReserveForm from "./components/SubComponents/ReserveForm";
 
 //React Import
-import React, { useState, useRef, useContext, createContext, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 function App() {
   const [currentAddress, setCurrentAddress] = useState("");
+  const [expandedHeader, setExpandedHeader] = useState(false);
 
   const reserveRef = useRef<HTMLDivElement>(null);
 
@@ -31,8 +32,12 @@ function App() {
     <body>
       <FloatingButton />
       <main id="main">
-        <Header />
-        <Hero setCurrentAddress={setCurrentAddress} handleFormSubmit={handleFormSubmit} />
+        <Header setExpandedHeader={setExpandedHeader} expandedHeader={expandedHeader} />
+        <Hero
+          setCurrentAddress={setCurrentAddress}
+          handleFormSubmit={handleFormSubmit}
+          expandedHeader={expandedHeader}
+        />
 
         <About />
 
