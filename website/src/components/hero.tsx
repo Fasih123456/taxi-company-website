@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
           <div className="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <div className="hero-text-container">
               <h2 className="animate__animated animate__fadeInDown animate__slower" id="hero-title">
-                Ride with us for lightning-fast deliveries
+                Ride with us for a bespoke travel experience
               </h2>
             </div>
 
@@ -38,7 +38,8 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
               />
               <button
                 type="submit"
-                className="btn btn-primary animate__animated animate__slideInRight animate__slower"
+                className="btn    animate__animated animate__slideInRight animate__slower"
+                style={{ backgroundColor: "#373a47" }}
               >
                 Book
               </button>

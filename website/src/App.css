@@ -336,6 +336,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: linear-gradient(to bottom, white, #0e1d34) !important;
 }
 
+Copy code
+/* Add this CSS to your stylesheet or CSS file */
+.hero-text-container {
+  display: inline-block; /* Set the display to inline-block */
+  position: relative; /* Set the position to relative to position the pseudo-element */
+}
+
+.hero-text-container::before {
+  content: ""; /* Add the content for the pseudo-element */
+  position: absolute; /* Set the position to absolute to overlay the content */
+  top: 0;
+  left: 0;
+  width: 100%; /* Set the width to 100% to cover the entire container */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Set the overlay color and opacity */
+}
+
 @media screen and (min-width: 1441px) {
   #img-logo {
     margin-left: 0px;
@@ -410,10 +427,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .hero-text-container {
   width: 90%;
-  background-color: rgba(0, 0, 0, 0.3);
+
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
   transition: background-color 0.3s ease;
 }
 
