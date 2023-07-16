@@ -19,13 +19,15 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
       <div className="container" id="mainhero">
         <div className="row gy-4 d-flex justify-content-between">
           <div className="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h2 className="animate__animated animate__fadeInDown animate__slower">
-              Your Lightning Fast Delivery Partner
-            </h2>
-            <p className="animate__animated animate__fadeInUp animate__slower">
-              Ride with us for lightning-fast deliveries. Your reliable taxi company, ready to
-              exceed your expectations. Book now!
-            </p>
+            <div className="hero-text-container">
+              <h2 className="animate__animated animate__fadeInDown animate__slower" id="hero-title">
+                Your Lightning Fast Delivery Partner
+              </h2>
+              <p className="hero-p animate__animated animate__fadeInUp animate__slower ">
+                Ride with us for lightning-fast deliveries. Your reliable taxi company, ready to
+                exceed your expectations. Book now!
+              </p>
+            </div>
 
             <form
               action="#"
@@ -35,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
             >
               <input
                 type="text"
-                className="form-control animate__animated animate__slideInLeft animate__slower"
+                className="form-control animate__animated animate__slideInLeft animate__slower hero-input"
                 placeholder="Enter your Departure Address"
                 onChange={(e) => setCurrentAddress(e.target.value)}
               />

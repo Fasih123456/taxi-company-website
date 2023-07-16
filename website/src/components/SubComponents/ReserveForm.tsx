@@ -133,7 +133,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
 
   return (
     <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" id="reserve-form">
-      <div className="wrapper wrapper--w780">
+      <div className="wrapper wrapper--w780" id="form-wrapper">
         <div className="card card-3">
           <div className="card-heading"></div>
           <div className="card-body">
@@ -164,7 +164,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
               <div className="input-group">
                 <OverlayTrigger
                   placement="bottom"
-                  delay={{ show: 100, hide: 400 }}
+                  delay={{ show: 50, hide: 600 }}
                   overlay={renderTooltip("Number Of Passengers(1-8)")}
                 >
                   <input
@@ -175,7 +175,9 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                     placeholder="Number Of Passengers"
                     min={1}
                     max={8}
-                    value={formValues.passengers}
+                    value={
+                      formValues.passengers == 0 ? formValues.passengers : "Number Of Passengers"
+                    }
                     onChange={handleInputChange}
                     required
                   />
@@ -194,7 +196,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                     excludeDateIntervals={[
                       { start: subDays(new Date(), 99999999), end: addDays(new Date(), -1) },
                     ]}
-                    dateFormat="MM/dd/yyyy h:mm aa"
+                    dateFormat="dd/MM/yyyy h:mm aa"
                     className="input--style-3"
                     showTimeInput
                   />

@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+
+.dancing-font {
+  font-family: "Dancing Script", cursive !important;
+  font-size: 25px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
 
 body {
   display: initial !important;
@@ -15,12 +23,6 @@ p {
 
 #hero-form {
   max-width: 50%;
-}
-
-@media screen and (max-width: 768px) {
-  #hero-form {
-    max-width: 100%;
-  }
 }
 
 .fab-container {
@@ -94,14 +96,6 @@ p {
 
 .card-img {
   height: 100%;
-}
-
-@media (max-width: 767px) {
-  .service-details .col {
-    flex-basis: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
 }
 
 .tailwind-card-image {
@@ -198,11 +192,6 @@ p {
   object-fit: cover;
   margin-left: 30px;
 }
-@media (max-width: 768px) {
-  #img-logo {
-    margin-left: 0;
-  }
-}
 
 .offcanvas {
   background-color: rgb(255, 255, 255);
@@ -251,7 +240,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: white;
+  background: darkblue;
   opacity: 0.9;
 
   padding: 2.5em 1.5em 0;
@@ -266,12 +255,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  padding: 1em;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  padding-top: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+.bm-item:hover {
+  color: red;
 }
 
 /* Styling of overlay */
@@ -287,4 +283,103 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 #main-heading {
   padding-bottom: 40px;
+}
+
+.footer-links {
+  color: inherit;
+}
+
+.card-div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-font {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1441px) {
+  #img-logo {
+    margin-left: 0px;
+  }
+
+  .hero-input {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  #img-logo {
+    margin-left: 10px;
+  }
+}
+
+/*For small screens*/
+@media screen and (max-width: 768px) {
+  .service-details .col {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  #img-logo {
+    width: 75%;
+    margin-left: 35px;
+  }
+
+  #hero-form {
+    max-width: 100%;
+  }
+}
+
+/*For extra small screens*/
+@media screen and (max-width: 425px) {
+  #img-logo {
+    width: 60%;
+    margin-left: 20px;
+  }
+
+  .bm-burger-button {
+    margin-right: 20px;
+    background-color: rgb(0, 0, 0, 0.1);
+  }
+
+  #hero-p {
+    font-size: 14px;
+  }
+
+  .hero-input {
+    font-size: 8px;
+  }
+}
+
+.hero-p {
+  font-size: 22px;
+}
+
+#form-wrapper {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.hero-text-container {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-text-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #form-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

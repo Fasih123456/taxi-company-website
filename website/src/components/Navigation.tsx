@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import MobileOffCanvas from "./SubComponents/mobileOffCanvas";
+
 import BurgerMenu from "./SubComponents/BurgerMenu";
 
 type NavigationProps = {
@@ -65,10 +65,18 @@ const Navigation: React.FC<NavigationProps> = ({ setExpandedHeader, expandedHead
               />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                  <Nav.Link href="#hero">Home</Nav.Link>
-                  <Nav.Link href="#about">About</Nav.Link>
-                  <Nav.Link href="#service-details">Services</Nav.Link>
-                  <Nav.Link href="#reserve-form">Book Now</Nav.Link>
+                  <Nav.Link href="#hero" className="dancing-font">
+                    Home
+                  </Nav.Link>
+                  <Nav.Link href="#about" className="dancing-font">
+                    About
+                  </Nav.Link>
+                  <Nav.Link href="#service-details" className="dancing-font">
+                    Services
+                  </Nav.Link>
+                  <Nav.Link href="#reserve-form" className="dancing-font">
+                    Book Now
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>

@@ -9,11 +9,9 @@ type HeaderProps = {
   expandedHeader: boolean;
 };
 
-//TODO: Incrase logo size
-//TODO: Align Logo to Page
-//TODO: Fix mobile Header
 //TODO: add navigations to header
 //TODO: Add animation to header mobile view
+//TODO: background color of expanded navigation should be dark color
 
 const Header: React.FC<HeaderProps> = ({ setExpandedHeader, expandedHeader }) => {
   return (

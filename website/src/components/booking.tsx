@@ -43,7 +43,7 @@ function Booking() {
           {cardImages.slice(0, 3).map((imgSrc, index) => (
             <Col
               key={index}
-              className={`md:w-1/3 card-styling animate__animated animate__fadeInLeft animate__delay-${index}s`}
+              className={`md:w-1/3 card-styling animate__animated animate__fadeInLeft animate__delay-${index}s `}
             >
               <TailWindCard imgSrc={imgSrc}>
                 <h3 className="card-heading font-bold mb-2 text-white">{cardTitles[index]}</h3>
@@ -56,7 +56,7 @@ function Booking() {
           {cardImages.slice(3, 6).map((imgSrc, index) => (
             <Col
               key={index}
-              className={`md:w-1/3 card-styling animate__animated animate__fadeInLeft animate__delay-${index}s`}
+              className={`md:w-1/3 card-styling animate__animated animate__fadeInLeft animate__delay-${index}s `}
             >
               <TailWindCard imgSrc={imgSrc}>
                 <h3 className="card-heading font-bold mb-2 text-white">{cardTitles[index + 3]}</h3>

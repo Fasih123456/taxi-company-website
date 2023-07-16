@@ -1,16 +1,40 @@
-import React from "react";
+import React, { Component } from "react";
 import { stack as Menu } from "react-burger-menu";
 
 class BurgerMenu extends React.Component {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isMenuOpen: false,
+    };
+  }
+
   showSettings(event: any) {
     event.preventDefault();
   }
+
+  isMenuOpen = (state) => {
+    let burgerButton = document.querySelector(".bm-burger-button");
+
+    if (state.isOpen) {
+      burgerButton.style.display = "none";
+    } else {
+      burgerButton.style.display = "block";
+    }
+
+    return state.isOpen;
+  };
 
   render() {
     // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
       <div id="outer-container">
-        <Menu right pageWrapId={"page-wrap"} outerContainerId={"outer-container"}>
+        <Menu
+          right
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+          onStateChange={(state) => this.isMenuOpen(state)}
+        >
           <a id="home" className="menu-item" href="#hero">
             Home
           </a>
@@ -24,7 +48,6 @@ class BurgerMenu extends React.Component {
             Book Now
           </a>
         </Menu>
-        <main id="page-wrap">. . .</main>
       </div>
     );
   }

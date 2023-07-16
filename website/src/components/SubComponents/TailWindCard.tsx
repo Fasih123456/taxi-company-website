@@ -18,7 +18,7 @@ const TailWindCard: React.FC<CardTypeProps> = ({ imgSrc, children, ...props }) =
   return (
     <div
       {...props}
-      className="relative max-w-sm max-h-11  overflow-hidden rounded-2xl shadow-lg group"
+      className="relative max-w-sm max-h-11 card-div  overflow-hidden rounded-2xl shadow-lg group"
     >
       <img
         src={imgSrc}
