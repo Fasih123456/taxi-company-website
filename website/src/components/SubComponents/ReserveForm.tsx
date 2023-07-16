@@ -173,9 +173,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                     placeholder="Number Of Passengers"
                     min={1}
                     max={8}
-                    value={
-                      formValues.passengers == 0 ? formValues.passengers : "Number Of Passengers"
-                    }
+                    value={formValues.passengers}
                     onChange={handleInputChange}
                     required
                   />

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .dancing-font {
   font-family: "Dancing Script", cursive !important;
@@ -229,8 +230,8 @@ p {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  right: 47px !important;
+  top: 33px !important;
 }
 
 /* Color/shape of close button cross */
@@ -392,6 +393,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .hero-p {
   font-size: 22px;
+  font-weight: bold;
+  font-family: "Pacifico", cursive !important;
 }
 
 #form-wrapper {
@@ -399,9 +402,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-right: 30px;
 }
 
+#hero-title {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Pacifico", cursive !important;
+}
+
 .hero-text-container {
   width: 90%;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);

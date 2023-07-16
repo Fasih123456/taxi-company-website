@@ -13,6 +13,7 @@ import ReserveForm from "./components/SubComponents/ReserveForm";
 //React Import
 import React, { useState, useRef } from "react";
 
+//Card images have full overlay on iamge
 function App() {
   const [currentAddress, setCurrentAddress] = useState("");
   const [expandedHeader, setExpandedHeader] = useState(false);

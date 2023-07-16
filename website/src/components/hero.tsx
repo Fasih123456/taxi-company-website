@@ -20,12 +20,8 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
           <div className="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <div className="hero-text-container">
               <h2 className="animate__animated animate__fadeInDown animate__slower" id="hero-title">
-                Your Lightning Fast Delivery Partner
+                Ride with us for lightning-fast deliveries
               </h2>
-              <p className="hero-p animate__animated animate__fadeInUp animate__slower ">
-                Ride with us for lightning-fast deliveries. Your reliable minibus company, ready to
-                exceed your expectations. Book now!
-              </p>
             </div>
 
             <form

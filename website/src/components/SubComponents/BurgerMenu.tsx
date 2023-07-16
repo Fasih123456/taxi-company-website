@@ -35,16 +35,16 @@ class BurgerMenu extends React.Component {
           outerContainerId={"outer-container"}
           onStateChange={(state) => this.isMenuOpen(state)}
         >
-          <a id="home" className="menu-item" href="#hero">
+          <a id="home" className="menu-item dancing-font" href="#hero">
             Home
           </a>
-          <a id="home" className="menu-item" href="#about">
+          <a id="home" className="menu-item dancing-font" href="#about">
             About
           </a>
-          <a id="home" className="menu-item" href="#service-details">
+          <a id="home" className="menu-item dancing-font" href="#service-details">
             Services
           </a>
-          <a id="home" className="menu-item" href="#reserve-form">
+          <a id="home" className="menu-item dancing-font" href="#reserve-form">
             Book Now
           </a>
         </Menu>
