@@ -9,8 +9,6 @@ type HeaderProps = {
   expandedHeader: boolean;
 };
 
-//TODO: background color of expanded navigation should be dark color
-
 const Header: React.FC<HeaderProps> = ({ setExpandedHeader, expandedHeader }) => {
   return (
     <header id="header" className="header d-flex align-items-center fixed-top">

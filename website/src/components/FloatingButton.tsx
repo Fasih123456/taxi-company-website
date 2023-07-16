@@ -1,7 +1,5 @@
 import { Container, Link, Button, lightColors, darkColors } from "react-floating-action-button";
 
-//TODO: Icrase logo size
-
 const FloatingButton = () => {
   return (
     <Container id="FABcontainer">

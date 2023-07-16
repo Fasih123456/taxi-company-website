@@ -142,7 +142,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                   type="text"
                   name="departure"
                   className="form-control input--style-3"
-                  placeholder="Address of Departure"
+                  placeholder="Departure Address"
                   value={currentAddress}
                   onChange={(e) => setCurrentAddress(e.target.value)}
                   required
@@ -153,7 +153,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                   type="text"
                   name="delivery"
                   className="form-control input--style-3"
-                  placeholder="Address of Arrival"
+                  placeholder="Destination Address"
                   value={formValues.delivery}
                   onChange={handleInputChange}
                   required

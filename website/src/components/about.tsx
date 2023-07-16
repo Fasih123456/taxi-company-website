@@ -2,8 +2,6 @@ import "animate.css/animate.min.css";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-//TODO: Fix animations so they don't trigger when the user is not seeing the screen
-//TODO: Make man font 20px, 18px
 function About() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   console.log(windowWidth);

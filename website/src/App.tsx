@@ -13,8 +13,6 @@ import ReserveForm from "./components/SubComponents/ReserveForm";
 //React Import
 import React, { useState, useRef } from "react";
 
-//TODO: Change font style to roboto condensed(300 weight)
-//TODO: Center all texts in mobile view
 function App() {
   const [currentAddress, setCurrentAddress] = useState("");
   const [expandedHeader, setExpandedHeader] = useState(false);
