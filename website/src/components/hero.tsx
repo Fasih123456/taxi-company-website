@@ -1,4 +1,5 @@
 import "animate.css/animate.min.css";
+import React, { useEffect } from "react";
 
 type HeroProps = {
   setCurrentAddress: (address: string) => void;
@@ -6,6 +7,7 @@ type HeroProps = {
   expandedHeader: boolean;
 };
 
+//TODO: Add background overlay to hero section
 const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expandedHeader }) => {
   return (
     <section

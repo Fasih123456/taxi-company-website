@@ -12,7 +12,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { subDays, addDays } from "date-fns";
 
 //Toastify
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -36,7 +35,7 @@ type FormValues = {
   message: string;
 };
 
-//TODO:also make number field +44 default in the booking box
+//TODO: Make form similar in padding to reference site
 
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
@@ -138,8 +137,8 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
         <div className="card card-3">
           <div className="card-heading"></div>
           <div className="card-body">
-            <h2 className="title">Registration Info</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className="title">Book Now</h2>
+            <form onSubmit={handleSubmit} id="actual-reserve-form">
               <div className="input-group">
                 <input
                   type="text"

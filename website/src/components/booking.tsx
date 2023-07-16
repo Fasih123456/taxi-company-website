@@ -1,6 +1,8 @@
+import "animate.css/animate.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import TailWindCard from "./SubComponents/TailWindCard";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 //Components
 
 import AirportPickUp from "../assets/img/booking-img/1.jpeg";
@@ -34,47 +36,34 @@ const cardImages = [AirportPickUp, DayTrips, Resorts, Sports, NightOut, Appointm
 
 function Booking() {
   return (
-    <section id="service-details" className="service-details">
+    <section id="service-details" className="service-details overlay">
       <Container>
-        <Row>
-          <Col className="md:w-1/3">
-            <TailWindCard imgSrc={cardImages[0]}>
-              <h3 className="text-xl font-bold mb-2 text-white">{cardTitles[0]}</h3>
-              <p className="text-xs">{cardText[0]}</p>
-            </TailWindCard>
-          </Col>
-          <Col className="md:w-1/3">
-            <TailWindCard imgSrc={cardImages[1]}>
-              <h3 className="text-xl font-bold mb-2 text-white">{cardTitles[1]}</h3>
-              <p className="text-xs">{cardText[1]}</p>
-            </TailWindCard>
-          </Col>
-          <Col className="md:w-1/3">
-            <TailWindCard imgSrc={cardImages[2]}>
-              <h3 className="text-xl font-bold mb-2 text-white">{cardTitles[2]}</h3>
-              <p className="text-xs">{cardText[2]}</p>
-            </TailWindCard>
-          </Col>
+        <h3 id="main-heading">Top Reasons To Choose East Manchester Minibus Service</h3>
+        <Row style={{ paddingTop: "30px" }}>
+          {cardImages.slice(0, 3).map((imgSrc, index) => (
+            <Col
+              key={index}
+              className={`md:w-1/3 card-styling animate__animated animate__fadeInLeft animate__delay-${index}s`}
+            >
+              <TailWindCard imgSrc={imgSrc}>
+                <h3 className="card-heading font-bold mb-2 text-white">{cardTitles[index]}</h3>
+                <p className="card-text">{cardText[index]}</p>
+              </TailWindCard>
+            </Col>
+          ))}
         </Row>
-        <Row>
-          <Col className="md:w-1/3">
-            <TailWindCard imgSrc={cardImages[3]}>
-              <h3 className="text-xl font-bold mb-2 text-white">{cardTitles[3]}</h3>
-              <p className="text-xs">{cardText[3]}</p>
-            </TailWindCard>
-          </Col>
-          <Col className="md:w-1/3">
-            <TailWindCard imgSrc={cardImages[4]}>
-              <h3 className="text-xl font-bold mb-2 text-white">{cardTitles[4]}</h3>
-              <p className="text-xs">{cardText[4]}</p>
-            </TailWindCard>
-          </Col>
-          <Col className="md:w-1/3">
-            <TailWindCard imgSrc={cardImages[5]}>
-              <h3 className="text-xl font-bold mb-2 text-white">{cardTitles[5]}</h3>
-              <p className="text-xs">{cardText[5]}</p>
-            </TailWindCard>
-          </Col>
+        <Row style={{ paddingTop: "30px" }}>
+          {cardImages.slice(3, 6).map((imgSrc, index) => (
+            <Col
+              key={index}
+              className={`md:w-1/3 card-styling animate__animated animate__fadeInLeft animate__delay-${index}s`}
+            >
+              <TailWindCard imgSrc={imgSrc}>
+                <h3 className="card-heading font-bold mb-2 text-white">{cardTitles[index + 3]}</h3>
+                <p className="card-text">{cardText[index + 3]}</p>
+              </TailWindCard>
+            </Col>
+          ))}
         </Row>
       </Container>
     </section>

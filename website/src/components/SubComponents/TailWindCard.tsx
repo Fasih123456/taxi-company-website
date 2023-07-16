@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 import "../../index.css";
 
@@ -7,7 +9,10 @@ type CardTypeProps = {
   imgSrc: string;
 };
 
+//TODO: Add animation so cards come one by one
+
 const TailWindCard: React.FC<CardTypeProps> = ({ imgSrc, children, ...props }) => {
+  const [selectedId, setSelectedId] = useState(null); //Currently being used for animations only
   const shouldAnimate = true;
 
   return (

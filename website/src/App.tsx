@@ -13,6 +13,8 @@ import ReserveForm from "./components/SubComponents/ReserveForm";
 //React Import
 import React, { useState, useRef } from "react";
 
+//TODO: Change font style to roboto condensed(300 weight)
+//TODO: Center all texts in mobile view
 function App() {
   const [currentAddress, setCurrentAddress] = useState("");
   const [expandedHeader, setExpandedHeader] = useState(false);
@@ -29,27 +31,29 @@ function App() {
   };
 
   return (
-    <body>
+    <>
       <FloatingButton />
-      <main id="main">
-        <Header setExpandedHeader={setExpandedHeader} expandedHeader={expandedHeader} />
-        <Hero
-          setCurrentAddress={setCurrentAddress}
-          handleFormSubmit={handleFormSubmit}
-          expandedHeader={expandedHeader}
-        />
+      <body>
+        <main id="main">
+          <Header setExpandedHeader={setExpandedHeader} expandedHeader={expandedHeader} />
+          <Hero
+            setCurrentAddress={setCurrentAddress}
+            handleFormSubmit={handleFormSubmit}
+            expandedHeader={expandedHeader}
+          />
 
-        <About />
+          <About />
 
-        <Booking />
+          <Booking />
 
-        <div ref={reserveRef}>
-          <ReserveForm currentAddress={currentAddress} setCurrentAddress={setCurrentAddress} />
-        </div>
+          <div ref={reserveRef}>
+            <ReserveForm currentAddress={currentAddress} setCurrentAddress={setCurrentAddress} />
+          </div>
 
-        <Footer />
-      </main>
-    </body>
+          <Footer />
+        </main>
+      </body>
+    </>
   );
 }
 

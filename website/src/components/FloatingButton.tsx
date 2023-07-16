@@ -1,39 +1,39 @@
 import { Container, Link, Button, lightColors, darkColors } from "react-floating-action-button";
 
+//TODO:Change the color of the button to match the theme
+//TODO:Make the buttons a circle
+//TODO: Icrase logo size
+
 const FloatingButton = () => {
   return (
-    <Container>
+    <Container id="FABcontainer">
       <Link
         href="tel:+447894532415"
-        tooltip="Contact By phone"
         icon="fa-solid fa-phone"
         className="fab-item btn btn-link btn-lg text-white"
-        styles={{ backgroundColor: lightColors.black }}
+        styles={{ backgroundColor: "#6ED34A" }}
       />
 
       <Link
         href="https://www.facebook.com/people/East-Manchester-Minibus-Service/100094447771778/?mibextid=ZbWKwL"
         target="_blank"
-        tooltip="Contact By Facebook"
         icon="fa-brands fa-facebook"
         className="fab-item btn btn-link btn-lg text-white"
-        styles={{ backgroundColor: lightColors.black }}
+        styles={{ backgroundColor: darkColors.blue }}
       />
 
       <Link
         href="https://www.instagram.com/example"
-        tooltip="Contact By Instagram"
         icon="fa-brands fa-instagram"
         className="fab-item btn btn-link btn-lg text-white"
-        styles={{ backgroundColor: lightColors.black }}
+        styles={{ backgroundColor: darkColors.red }}
       />
 
       <Link
         href="https://wa.me/+447894532415"
-        tooltip="Contact By Whatsapp"
         icon="fa-brands fa-whatsapp"
         className="fab-item btn btn-link btn-lg text-white"
-        styles={{ backgroundColor: lightColors.black }}
+        styles={{ backgroundColor: darkColors.green }}
       />
 
       <Button

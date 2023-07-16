@@ -1,14 +1,19 @@
+import "../index.css";
+
+//TODO: p tag style on footer
+
 function Footer() {
   return (
     <>
       <footer id="footer" className="footer">
         <div className="container">
           <div className="row gy-4">
-            <div className="col-lg-5 col-md-12 footer-info">
-              <a href="index.html" className="logo d-flex align-items-center">
-                <span>EMMS</span>
-              </a>
-              <p>
+            <div className="col-lg-4 col-md-12 footer-info text-center">
+              <span style={{ fontSize: "20px", fontWeight: "700" }} className="text-center">
+                EAST MANCHESTER MINIBUS SERVICE
+              </span>
+
+              <p className="text-center" style={{ paddingTop: "15px" }}>
                 Experience seamless taxi service in Manchester with our reliable transportation
                 company. We are committed to providing prompt and comfortable rides to your desired
                 destinations. Our skilled drivers and modern fleet ensure a safe and enjoyable
@@ -16,11 +21,13 @@ function Footer() {
                 services in Manchester.
               </p>
             </div>
-            <div className="col-lg-2 col-6 footer-links">
+            <div className="col-lg-4 col-6 footer-links text-center justify-center items-center">
               <h4>Useful Links</h4>
               <ul>
                 <li>
-                  <a href="#hero">Home</a>
+                  <a href="#hero">
+                    <p>Home</p>
+                  </a>
                 </li>
                 <li>
                   <a href="#about">About us</a>
@@ -34,16 +41,17 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <div className="col-lg-4 col-md-12 footer-contact text-center text-md-start text-center">
               <h4>Contact Us</h4>
               <p>
                 Manchester, Rochdale,
                 <br />
                 Oldham,Ashton-under-Lyne
                 <br />
-                <strong>Phone:</strong> +44 07894 532415
+                <strong>Phone:</strong> <a href="tel:+4407894532415">+44 07894 532415</a>
                 <br />
-                <strong>Email:</strong> emmsminibus@outlook.com
+                <strong>Email:</strong>{" "}
+                <a href="mailto:emmsminibus@outlook.com">emmsminibus@outlook.com</a>
                 <br />
               </p>
             </div>
