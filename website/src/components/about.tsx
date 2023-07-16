@@ -27,8 +27,8 @@ function About() {
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-12 content order-last  order-lg-first">
-              <h3 className="text-center">Welcome to East Manchester Minibus Service</h3>
-              <p className="pt-10 pb-10 animate__animated animate__fadeInLeft text-center  ">
+              <h3 className="text-center about-h">Welcome to East Manchester Minibus Service</h3>
+              <p className="pt-10 pb-10 animate__animated animate__fadeInLeft text-center about-p  ">
                 EMMS is your premier choice for reliable and affordable transportation services in
                 East Manchester and surrounding areas. With over 20 years of experience in the
                 industry, we take pride in offering a first-class travel solution that caters to all

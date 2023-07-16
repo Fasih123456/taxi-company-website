@@ -12,10 +12,10 @@ function Footer() {
               </span>
 
               <p className="text-center footer-font" style={{ paddingTop: "15px" }}>
-                Experience seamless taxi service in Manchester with our reliable transportation
+                Experience seamless minibus service in Manchester with our reliable transportation
                 company. We are committed to providing prompt and comfortable rides to your desired
                 destinations. Our skilled drivers and modern fleet ensure a safe and enjoyable
-                journey. Book your ride now and enjoy the convenience of our exceptional taxi
+                journey. Book your ride now and enjoy the convenience of our exceptional minibus
                 services in Manchester.
               </p>
             </div>

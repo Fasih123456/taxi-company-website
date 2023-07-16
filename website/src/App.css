@@ -327,6 +327,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* Add more hover styles as needed */
 }
 
+.about-p {
+  font-size: 20px !important;
+}
+
 @media screen and (min-width: 1441px) {
   #img-logo {
     margin-left: 0px;

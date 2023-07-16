@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
                 Your Lightning Fast Delivery Partner
               </h2>
               <p className="hero-p animate__animated animate__fadeInUp animate__slower ">
-                Ride with us for lightning-fast deliveries. Your reliable taxi company, ready to
+                Ride with us for lightning-fast deliveries. Your reliable minibus company, ready to
                 exceed your expectations. Book now!
               </p>
             </div>
