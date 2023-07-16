@@ -75,7 +75,8 @@ const Navigation: React.FC<NavigationProps> = ({ setExpandedHeader, expandedHead
                     Services
                   </Nav.Link>
                   <Nav.Link href="#reserve-form" className="dancing-font">
-                    Book Now
+                    {/* Wrap the link in a styled button */}
+                    <button className="fancy-button">Book Now</button>
                   </Nav.Link>
                 </Nav>
               </Navbar.Collapse>

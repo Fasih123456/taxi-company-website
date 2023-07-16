@@ -128,11 +128,17 @@ p {
   justify-content: flex-end;
 }
 
-.fab-container:hover .fab-item:not(:last-child) {
-  height: 50px !important;
+.fa-brands {
+  font-size: 30px;
+}
+
+.fa-solid {
+  font-size: 27px;
 }
 
 .fab-item {
+  width: 64px !important;
+  height: 64px !important;
   border-radius: 50% !important;
 }
 
@@ -296,6 +302,25 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .footer-font {
   font-size: 14px;
+}
+
+/* Add this CSS to your stylesheet or CSS file */
+.fancy-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0d42ff; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  /* Add more styles as needed to make it look fancy */
+}
+
+.fancy-button:hover {
+  /* Add hover styles if desired */
+  background-color: #0d41ffed; /* Change the background color on hover */
+  /* Add more hover styles as needed */
 }
 
 @media screen and (min-width: 1441px) {

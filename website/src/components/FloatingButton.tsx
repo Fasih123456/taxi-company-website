@@ -1,7 +1,5 @@
 import { Container, Link, Button, lightColors, darkColors } from "react-floating-action-button";
 
-//TODO:Change the color of the button to match the theme
-//TODO:Make the buttons a circle
 //TODO: Icrase logo size
 
 const FloatingButton = () => {
@@ -23,7 +21,7 @@ const FloatingButton = () => {
       />
 
       <Link
-        href="https://www.instagram.com/example"
+        href="https://instagram.com/eastmcrminibus?igshid=ZDc4ODBmNjlmNQ=="
         icon="fa-brands fa-instagram"
         className="fab-item btn btn-link btn-lg text-white"
         styles={{ backgroundColor: darkColors.red }}

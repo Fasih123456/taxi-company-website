@@ -9,8 +9,6 @@ type HeaderProps = {
   expandedHeader: boolean;
 };
 
-//TODO: add navigations to header
-//TODO: Add animation to header mobile view
 //TODO: background color of expanded navigation should be dark color
 
 const Header: React.FC<HeaderProps> = ({ setExpandedHeader, expandedHeader }) => {

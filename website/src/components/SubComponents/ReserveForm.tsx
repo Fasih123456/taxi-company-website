@@ -35,8 +35,6 @@ type FormValues = {
   message: string;
 };
 
-//TODO: Make form similar in padding to reference site
-
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
   const [pickupTime] = useState("");

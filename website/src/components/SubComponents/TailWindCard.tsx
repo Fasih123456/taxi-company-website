@@ -9,8 +9,6 @@ type CardTypeProps = {
   imgSrc: string;
 };
 
-//TODO: Add animation so cards come one by one
-
 const TailWindCard: React.FC<CardTypeProps> = ({ imgSrc, children, ...props }) => {
   const [selectedId, setSelectedId] = useState(null); //Currently being used for animations only
   const shouldAnimate = true;
