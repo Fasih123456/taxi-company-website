@@ -8,6 +8,10 @@
   padding-right: 20px !important;
 }
 
+.dancing-font:hover {
+  font-size: 30px !important;
+}
+
 body {
   display: initial !important;
 }
