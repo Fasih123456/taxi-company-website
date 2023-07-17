@@ -9,12 +9,7 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expandedHeader }) => {
   return (
-    <section
-      id="hero"
-      className={`hero d-flex align-items-center ${
-        expandedHeader == true ? "margin-top-200" : "margin-top-100"
-      }`}
-    >
+    <section id="hero" className="hero d-flex align-items-center" style={{ marginTop: "40px" }}>
       <div className="container" id="mainhero">
         <div className="row gy-4 d-flex justify-content-between">
           <div className="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">
