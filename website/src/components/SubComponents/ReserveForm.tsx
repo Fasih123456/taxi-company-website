@@ -38,11 +38,11 @@ type FormValues = {
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
   const [pickupTime] = useState("");
-  const server400 = () =>
+  const server202 = () =>
     toast.success("Your Booking Request Has Been Sent Successfully To your Email!");
   const server500 = () =>
     toast.error(
-      "An Error Occured While Sending Your Booking Request. Please Try Again Later. Contact Us If The Problem Persists."
+      "An Error Occurred While Sending Your Booking Request. Please Try Again Later. Contact Us If The Problem Persists."
     );
   const PassengerNumValidationFailed = () =>
     toast.warning("Please Enter A Valid Number Of Passengers between 1 and 8");
@@ -95,7 +95,7 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
     try {
       //Large number to ensure that the id is unique
       const randomNumber = Math.floor(Math.random() * 1000000) + 1000000;
-      const response = await api.post("/submit", {
+      const response = await api.post("https://emms-client-backend.azurewebsites.net/submit", {
         id: randomNumber,
         created: new Date().toISOString(),
         passengerName: formValues.name,
@@ -108,10 +108,13 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
         bookingStatus: "",
       });
 
-      if (response.status === 400) {
-        server400();
+      console.log(response);
+
+      if (response.status === 202) {
+        server202();
       } else if (response.status === 500) {
         server500();
+      } else {
       }
 
       setFormValues({

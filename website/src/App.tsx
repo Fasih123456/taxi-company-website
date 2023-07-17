@@ -13,7 +13,6 @@ import ReserveForm from "./components/SubComponents/ReserveForm";
 //React Import
 import React, { useState, useRef } from "react";
 
-//TODO: Fix header to its position
 //TODO: add favicon
 //TODO: Fix the form api
 

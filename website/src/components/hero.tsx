@@ -33,8 +33,7 @@ const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expand
               />
               <button
                 type="submit"
-                className="btn    animate__animated animate__slideInRight animate__slower"
-                style={{ backgroundColor: "#373a47" }}
+                className="btn  btn-primary   animate__animated animate__slideInRight animate__slower"
               >
                 Book
               </button>
