@@ -28,27 +28,25 @@ class BurgerMenu extends React.Component {
   render() {
     // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
-      <div id="outer-container">
-        <Menu
-          right
-          pageWrapId={"page-wrap"}
-          outerContainerId={"outer-container"}
-          onStateChange={(state) => this.isMenuOpen(state)}
-        >
-          <a id="home" className="menu-item dancing-font" href="#hero">
-            Home
-          </a>
-          <a id="home" className="menu-item dancing-font" href="#about">
-            About
-          </a>
-          <a id="home" className="menu-item dancing-font" href="#service-details">
-            Services
-          </a>
-          <a id="home" className="menu-item dancing-font" href="#reserve-form">
-            Book Now
-          </a>
-        </Menu>
-      </div>
+      <Menu
+        right
+        pageWrapId={"page-wrap"}
+        outerContainerId={"outer-container"}
+        onStateChange={(state) => this.isMenuOpen(state)}
+      >
+        <a id="home" className="menu-item dancing-font" href="#hero">
+          Home
+        </a>
+        <a id="home" className="menu-item dancing-font" href="#about">
+          About
+        </a>
+        <a id="home" className="menu-item dancing-font" href="#service-details">
+          Services
+        </a>
+        <a id="home" className="menu-item dancing-font" href="#reserve-form">
+          Book Now
+        </a>
+      </Menu>
     );
   }
 }
