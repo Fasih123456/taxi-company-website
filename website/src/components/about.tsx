@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 function About() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  console.log(windowWidth);
 
   useEffect(() => {
     function handleResize() {
@@ -12,8 +11,6 @@ function About() {
     }
 
     window.addEventListener("resize", handleResize);
-
-    //console.log(windowWidth, location);
 
     // Cleanup the event listener on unmount
     return () => window.removeEventListener("resize", handleResize);

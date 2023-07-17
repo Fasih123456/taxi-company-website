@@ -1,13 +1,16 @@
+//CSS imports
 import "animate.css/animate.min.css";
-import React, { useEffect } from "react";
+
+//React Imports
+import React from "react";
 
 type HeroProps = {
   setCurrentAddress: (address: string) => void;
   handleFormSubmit: (e: React.FormEvent) => void;
-  expandedHeader: boolean;
 };
 
-const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit, expandedHeader }) => {
+//Displays the Hero section of the website
+const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit }) => {
   return (
     <section id="hero" className="hero d-flex align-items-center" style={{ marginTop: "40px" }}>
       <div className="container" id="mainhero">

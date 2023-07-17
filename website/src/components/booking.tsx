@@ -1,10 +1,8 @@
-import "animate.css/animate.min.css";
+//Dependencies
 import { Container, Row, Col } from "react-bootstrap";
 import TailWindCard from "./SubComponents/TailWindCard";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-//Components
 
+//Component imports
 import AirportPickUp from "../assets/img/booking-img/1.jpeg";
 import DayTrips from "../assets/img/booking-img/2.jpg";
 import Resorts from "../assets/img/booking-img/3.jpeg";
@@ -12,7 +10,9 @@ import Sports from "../assets/img/booking-img/4.jpeg";
 import NightOut from "../assets/img/booking-img/5.jpg";
 import Appointment from "../assets/img/booking-img/6.jpg";
 
+//CSS imports
 import "../index.css";
+import "animate.css/animate.min.css";
 
 const cardTitles = [
   "Airport Drop Off and Pick-Up",

@@ -1,7 +1,7 @@
+//React imports
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
-import { useState } from "react";
 
+//CSS imports
 import "../../index.css";
 
 type CardTypeProps = {
@@ -9,8 +9,8 @@ type CardTypeProps = {
   imgSrc: string;
 };
 
+//Renders the inner layer of the tailwind card
 const TailWindCard: React.FC<CardTypeProps> = ({ imgSrc, children, ...props }) => {
-  const [selectedId, setSelectedId] = useState(null); //Currently being used for animations only
   const shouldAnimate = true;
 
   return (

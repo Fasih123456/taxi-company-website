@@ -1,39 +1,14 @@
+//React Components
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-import BurgerMenu from "./SubComponents/BurgerMenu";
+//Sub Components
+import BurgerMenu from "./BurgerMenu";
 
-type NavigationProps = {
-  setExpandedHeader: (expandedHeader: boolean) => void;
-  expandedHeader: boolean;
-};
-
-const options = [
-  {
-    name: "Enable backdrop (default)",
-    scroll: false,
-    backdrop: true,
-  },
-  {
-    name: "Disable backdrop",
-    scroll: false,
-    backdrop: false,
-  },
-  {
-    name: "Enable body scrolling",
-    scroll: true,
-    backdrop: false,
-  },
-  {
-    name: "Enable both scrolling & backdrop",
-    scroll: true,
-    backdrop: true,
-  },
-];
-
-const Navigation: React.FC<NavigationProps> = ({ setExpandedHeader, expandedHeader }) => {
+type NavigationProps = {};
+//Displays normal navbar on desktop view and burger menu on mobile view
+const Navigation: React.FC<NavigationProps> = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  console.log(windowWidth);
 
   useEffect(() => {
     function handleResize() {
@@ -42,16 +17,9 @@ const Navigation: React.FC<NavigationProps> = ({ setExpandedHeader, expandedHead
 
     window.addEventListener("resize", handleResize);
 
-    console.log(windowWidth, location);
-
     // Cleanup the event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, [windowWidth, location]);
-
-  const handleMobileNavClick = () => {
-    setExpandedHeader(!expandedHeader);
-    // Add your desired logic or actions here
-  };
 
   return (
     <>
@@ -59,10 +27,7 @@ const Navigation: React.FC<NavigationProps> = ({ setExpandedHeader, expandedHead
         <div>
           <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
-              <Navbar.Toggle
-                aria-controls="responsive-navbar-nav"
-                onClick={handleMobileNavClick} // Add onClick event handler
-              />
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link href="#hero" className="dancing-font">
@@ -75,7 +40,6 @@ const Navigation: React.FC<NavigationProps> = ({ setExpandedHeader, expandedHead
                     Services
                   </Nav.Link>
                   <Nav.Link href="#reserve-form" className="dancing-font">
-                    {/* Wrap the link in a styled button */}
                     <button className="fancy-button">Book Now</button>
                   </Nav.Link>
                 </Nav>

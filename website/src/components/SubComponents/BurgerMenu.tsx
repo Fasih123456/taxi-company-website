@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { stack as Menu } from "react-burger-menu";
 
 class BurgerMenu extends React.Component {

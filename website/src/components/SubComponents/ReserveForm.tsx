@@ -35,9 +35,12 @@ type FormValues = {
   message: string;
 };
 
+//Handles the reverse form and its api calls
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
   const [pickupTime] = useState("");
+
+  //All the toast messages
   const server202 = () =>
     toast.success("Your Booking Request Has Been Sent Successfully To your Email!");
   const server500 = () =>
@@ -58,6 +61,8 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
     phone: "",
     message: "",
   });
+
+  //Will be used for the date picker
   const [startDate, setStartDate] = useState(new Date());
 
   //Handles all input changes
@@ -108,13 +113,12 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
         bookingStatus: "",
       });
 
-      console.log(response);
-
       if (response.status === 202) {
+        //success
         server202();
       } else if (response.status === 500) {
+        //server failure
         server500();
-      } else {
       }
 
       setFormValues({

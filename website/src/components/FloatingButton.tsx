@@ -1,4 +1,5 @@
-import { Container, Link, Button, lightColors, darkColors } from "react-floating-action-button";
+//Dependencies
+import { Container, Link, Button, darkColors } from "react-floating-action-button";
 
 const FloatingButton = () => {
   return (

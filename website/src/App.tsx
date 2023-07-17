@@ -5,7 +5,6 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import About from "./components/about";
 import Hero from "./components/hero";
-
 import Booking from "./components/booking";
 import FloatingButton from "./components/FloatingButton";
 import ReserveForm from "./components/SubComponents/ReserveForm";
@@ -14,12 +13,9 @@ import ReserveForm from "./components/SubComponents/ReserveForm";
 import React, { useState, useRef } from "react";
 
 //TODO: add favicon
-//TODO: Fix the form api
-
-//Card images have full overlay on iamge
+//Single page website with no react router usages, all components are rendered in App.tsx
 function App() {
   const [currentAddress, setCurrentAddress] = useState("");
-  const [expandedHeader, setExpandedHeader] = useState(false);
 
   const reserveRef = useRef<HTMLDivElement>(null);
 
@@ -37,12 +33,8 @@ function App() {
       <FloatingButton />
       <body>
         <main id="main">
-          <Header setExpandedHeader={setExpandedHeader} expandedHeader={expandedHeader} />
-          <Hero
-            setCurrentAddress={setCurrentAddress}
-            handleFormSubmit={handleFormSubmit}
-            expandedHeader={expandedHeader}
-          />
+          <Header />
+          <Hero setCurrentAddress={setCurrentAddress} handleFormSubmit={handleFormSubmit} />
 
           <About />
 
@@ -58,12 +50,5 @@ function App() {
     </>
   );
 }
-
-/*
-
-        <div ref={reserveRef}>
-          <Reserve currentAddress={currentAddress} setCurrentAddress={setCurrentAddress} />
-        </div>
-*/
 
 export default App;

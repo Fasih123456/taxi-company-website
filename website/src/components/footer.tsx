@@ -1,3 +1,4 @@
+//CSS imports
 import "../index.css";
 
 function Footer() {
@@ -58,12 +59,12 @@ function Footer() {
                 <br />
                 Oldham,Ashton-under-Lyne
                 <br />
-                <strong>Phone:</strong>{" "}
+                <strong>Phone:</strong>
                 <a className="footer-links" href="tel:+4407894532415">
                   +44 07894 532415
                 </a>
                 <br />
-                <strong>Email:</strong>{" "}
+                <strong>Email:</strong>
                 <a className="footer-links" href="mailto:emmsminibus@outlook.com">
                   emmsminibus@outlook.com
                 </a>
@@ -77,7 +78,11 @@ function Footer() {
           <div className="copyright">
             &copy; Copyright 2023
             <strong>
-              <span> Sysmologic</span>
+              <span>
+                <a href="sysmologic.com" style={{ color: "inherit", paddingLeft: "5px" }}>
+                  Sysmologic
+                </a>
+              </span>
             </strong>
             . All Rights Reserved
           </div>
