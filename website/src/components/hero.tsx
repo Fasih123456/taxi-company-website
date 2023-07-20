@@ -12,7 +12,7 @@ type HeroProps = {
 //Displays the Hero section of the website
 const Hero: React.FC<HeroProps> = ({ setCurrentAddress, handleFormSubmit }) => {
   return (
-    <section id="hero" className="hero d-flex align-items-center" style={{ marginTop: "40px" }}>
+    <section id="hero" className="hero d-flex align-items-center" style={{ marginTop: "150px" }}>
       <div className="container" id="mainhero">
         <div className="row gy-4 d-flex justify-content-between">
           <div className="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">

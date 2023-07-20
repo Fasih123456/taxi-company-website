@@ -217,7 +217,7 @@ p {
   width: 36px;
   height: 30px;
   right: 36px;
-  top: 30px;
+  top: 40px;
 }
 
 /* Color/shape of burger icon bars */
@@ -296,6 +296,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 #main-heading {
   padding-bottom: 40px;
+}
+
+#header {
+  padding-top: 0px;
 }
 
 .footer-links {
