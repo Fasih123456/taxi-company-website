@@ -79,7 +79,10 @@ function Footer() {
             &copy; Copyright 2023
             <strong>
               <span>
-                <a href="sysmologic.com" style={{ color: "inherit", paddingLeft: "5px" }}>
+                <a
+                  href="https://www.sysmologic.com"
+                  style={{ color: "inherit", paddingLeft: "5px" }}
+                >
                   Sysmologic
                 </a>
               </span>
