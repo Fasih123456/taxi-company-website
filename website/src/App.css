@@ -32,6 +32,7 @@ p {
 
 .fab-container {
   right: 2vw !important;
+  bottom: 5vh !important;
 }
 
 .bg-body-tertiary {
@@ -180,8 +181,9 @@ p {
   margin: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  background-color: #19875409;
+}
+.inner-card {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .card-heading {
@@ -422,6 +424,7 @@ Copy code
 #hero-title {
   font-size: 50px;
   font-weight: bold;
+  padding-left: 0px;
   font-family: "Pacifico", cursive !important;
 }
 
