@@ -23,7 +23,7 @@ const Navigation: React.FC<NavigationProps> = () => {
 
   return (
     <>
-      {windowWidth > 768 ? (
+      {windowWidth > 1024 ? (
         <div>
           <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
