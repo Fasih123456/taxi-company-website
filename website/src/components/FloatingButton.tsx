@@ -33,11 +33,7 @@ const FloatingButton = () => {
         styles={{ backgroundColor: darkColors.green }}
       />
 
-      <Button
-        tooltip="Contact Us!"
-        icon="fa-solid fa-comment fa-2xl"
-        styles={{ backgroundColor: darkColors.white }}
-      />
+      <Button icon="fa-solid fa-comment fa-2xl" styles={{ backgroundColor: darkColors.white }} />
     </Container>
   );
 };

@@ -216,8 +216,8 @@ p {
   position: fixed;
   width: 36px;
   height: 30px;
-  right: 42px;
-  top: 40px;
+  right: 3vw;
+  top: 32px;
 }
 
 /* Color/shape of burger icon bars */
@@ -290,6 +290,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
+#hero {
+  margin-top: 100px;
+}
+
 .fab-container {
   z-index: 10;
 }
@@ -300,6 +304,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 #header {
   padding-top: 0px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .footer-links {
@@ -366,6 +371,10 @@ Copy code
 
   .hero-input {
     font-size: 30px;
+  }
+
+  #hero {
+    margin-top: 125px;
   }
 }
 
