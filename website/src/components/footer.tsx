@@ -57,15 +57,15 @@ function Footer() {
               <p className=" footer-font">
                 Manchester, Rochdale,
                 <br />
-                Oldham,Ashton-under-Lyne
+                Oldham, Ashton-under-Lyne
                 <br />
-                <strong>Phone:</strong>
+                <strong>Phone: </strong>
                 <a className="footer-links" href="tel:+4407894532415">
                   +44 07894 532415
                 </a>
                 <br />
-                <strong>Email:</strong>
-                <a className="footer-links" href="mailto:emmsminibus@outlook.com">
+                <strong>Email: </strong>
+                <a className="footer-links" href="mailto:contact@emmsminibus.com">
                   emmsminibus@outlook.com
                 </a>
                 <br />
