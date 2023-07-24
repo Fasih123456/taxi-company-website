@@ -23,7 +23,7 @@ app.post("/submit", (req, res) => {
       passengerName: req.body.passengerName,
       pickUpLocation: req.body.pickUpLocation,
       dropOffAddress: req.body.dropOffAddress,
-      pickUpTime: req.body.pickUpTime,
+      pickUpTime: new Date(req.body.pickUpTime),
       contactPhoneNumber: req.body.contactPhoneNumber,
       numberOfPassengers: req.body.numberOfPassengers,
       email: req.body.email,

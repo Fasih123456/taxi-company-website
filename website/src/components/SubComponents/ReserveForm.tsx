@@ -1,7 +1,7 @@
 import "./css/form.css";
 
 //React
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -16,7 +16,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //API
-import api from "../../API/api";
+import axios from "axios";
 
 //Handles the type for the props
 type ReserveProps = {
@@ -28,17 +28,16 @@ type ReserveProps = {
 type FormValues = {
   departure: string;
   delivery: string;
-  passengers: number;
+  passengers: string;
   name: string;
   email: string;
   phone: string;
-  message: string;
 };
 
 //Handles the reverse form and its api calls
 const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress }) => {
   //Will require some conversions, hence it is seperate from the other form values
-  const [pickupTime] = useState("");
+  const [pickupTime, setPickUpTime] = useState(new Date());
 
   //All the toast messages
   const server202 = () =>
@@ -55,15 +54,11 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
   const [formValues, setFormValues] = useState<FormValues>({
     departure: currentAddress ? currentAddress : "", //this is being handled by the parent component
     delivery: "",
-    passengers: 1,
+    passengers: "",
     name: "",
     email: "",
     phone: "",
-    message: "",
   });
-
-  //Will be used for the date picker
-  const [startDate, setStartDate] = useState(new Date());
 
   //Handles all input changes
   const handleInputChange = (e: any) => {
@@ -81,13 +76,13 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
     e.preventDefault();
 
     //Validates the number of passengers
-    if (formValues.passengers < 1 || formValues.passengers > 8) {
+    if (Number(formValues.passengers) < 1 || Number(formValues.passengers) > 8) {
       PassengerNumValidationFailed();
       validation = false;
     }
 
     //Validates the date
-    if (startDate < new Date()) {
+    if (pickupTime < new Date()) {
       dateValidationFailed();
       validation = false;
     }
@@ -99,10 +94,11 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
 
     try {
       //Large number to ensure that the id is unique
-      const randomNumber = Math.floor(Math.random() * 1000000) + 1000000;
-      const response = await api.post("https://emms-client-backend.azurewebsites.net/submit", {
+      const randomNumber = Number(Math.floor(Math.random() * 1000000) + 1000000);
+
+      const response = await axios.post("https://eastmanchesterapi.azurewebsites.net//Customer", {
         id: randomNumber,
-        created: new Date().toISOString(),
+        created: new Date(),
         passengerName: formValues.name,
         pickUpLocation: currentAddress,
         dropOffAddress: formValues.delivery,
@@ -124,15 +120,21 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
       setFormValues({
         departure: "",
         delivery: "",
-        passengers: 1,
+        passengers: "",
         name: "",
         email: "",
         phone: "",
-        message: "",
       });
     } catch (error) {
       server500();
       console.error(error);
+    }
+  };
+
+  const handleDateChange = (date: Date | null) => {
+    // The date parameter will be either a Date object or null
+    if (date) {
+      setPickUpTime(date);
     }
   };
 
@@ -167,24 +169,16 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                 />
               </div>
               <div className="input-group">
-                <OverlayTrigger
-                  placement="bottom"
-                  delay={{ show: 50, hide: 600 }}
-                  overlay={renderTooltip("Number Of Passengers(1-8)")}
-                >
-                  <input
-                    type="number"
-                    name="passengers"
-                    id="passengers"
-                    className="form-control input--style-3"
-                    placeholder="Number Of Passengers"
-                    min={1}
-                    max={8}
-                    value={formValues.passengers}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </OverlayTrigger>
+                <input
+                  type="text"
+                  name="passengers"
+                  id="passengers"
+                  className="form-control input--style-3"
+                  placeholder="Number Of Passengers(1-8)"
+                  value={formValues.passengers}
+                  onChange={handleInputChange}
+                  required
+                />
               </div>
               <div className="input-group">
                 <OverlayTrigger
@@ -193,8 +187,8 @@ const ReserveForm: React.FC<ReserveProps> = ({ currentAddress, setCurrentAddress
                   overlay={renderTooltip("Pick Up Date")}
                 >
                   <DatePicker
-                    selected={startDate}
-                    onChange={(date: SetStateAction<Date>) => setStartDate(date)}
+                    selected={pickupTime}
+                    onChange={handleDateChange}
                     timeInputLabel="Time:"
                     excludeDateIntervals={[
                       { start: subDays(new Date(), 99999999), end: addDays(new Date(), -1) },
